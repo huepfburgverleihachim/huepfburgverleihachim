@@ -11,12 +11,10 @@
     <meta name="keywords" content="Hüpfburg mieten Achim, Hüpfburgen Verleih Achim, Kindergeburtstag Achim, Hüpfburg Krokodil, Bouncy castle rental Achim">
     <meta name="author" content="Hüpfburg Verleih Achim">
     <meta name="robots" content="index, follow">
-    <!-- HIER DEINE ECHTE GITHUB-PAGES URL EINTRAGEN (z.B. https://deinname.github.io/huepfburg/) -->
     <link rel="canonical" href="https://dein-github-username.github.io/">
 
-    <!-- Open Graph / Facebook / WhatsApp (Vorschau beim Teilen) -->
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
-    <!-- HIER DEINE ECHTE GITHUB-PAGES URL EINTRAGEN -->
     <meta property="og:url" content="https://dein-github-username.github.io/">
     <meta property="og:title" content="Hüpfburg mieten Achim | Modell Krokodil Verleih">
     <meta property="og:description" content="Mieten Sie die Hüpfburg 'Krokodil' für Kindergeburtstag, Hochzeit oder Familienfest in Achim. Inklusive Gebläse, Transportanhänger und Schlecht-Wetter-Garantie.">
@@ -67,7 +65,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script>
-        // Tailwind Konfiguration für benutzerdefinierte Farben und Fonts
         tailwind.config = {
             theme: {
                 extend: {
@@ -89,48 +86,14 @@
     </script>
     
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        h1, h2, h3, .font-heading {
-            font-family: 'Fredoka', sans-serif;
-        }
-        
-        /* Hover-Effekt für das Hauptbild */
-        .hero-img-container {
-            overflow: hidden;
-            border-radius: 1.5rem;
-        }
-        .hero-img {
-            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .hero-img-container:hover .hero-img {
-            transform: scale(1.08) rotate(-1.5deg);
-        }
-
-        /* Lightbox Styling */
-        #lightbox {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        #lightbox.active {
-            display: flex;
-        }
-        #lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 0.5rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
+        body { font-family: 'Poppins', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Fredoka', sans-serif; }
+        .hero-img-container { overflow: hidden; border-radius: 1.5rem; }
+        .hero-img { transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
+        .hero-img-container:hover .hero-img { transform: scale(1.08) rotate(-1.5deg); }
+        #lightbox { display: none; position: fixed; z-index: 999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; cursor: pointer; }
+        #lightbox.active { display: flex; }
+        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 0.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -158,34 +121,27 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 md:items-center">
                 
-                <!-- Linke Spalte: Text, Mobile-Bild & Buttons -->
                 <div class="flex flex-col gap-6 md:gap-8">
-                    
-                    <!-- 1. Intro (Handy & PC) -->
                     <div class="text-center md:text-left">
                         <p class="inline-block text-crocodile-green font-bold uppercase tracking-wider mb-3">Unser Angebot</p>
                         <h1 class="text-3xl md:text-5xl font-extrabold text-crocodile-dark mb-3 leading-tight">Kindergeburtstag, Hochzeit oder Familienfest?</h1>
                         <h2 class="text-xl md:text-2xl text-gray-600 font-medium">Bei uns finden Sie alles, was Sie brauchen!</h2>
                     </div>
 
-                    <!-- 2. Badge (Nur Handy) -->
                     <div class="flex justify-center md:hidden">
                         <span class="bg-sun-yellow text-gray-800 font-bold py-2 px-6 rounded-full shadow-md text-lg inline-flex items-center gap-2">
                             <span>🐊</span> Modell: Krokodil
                         </span>
                     </div>
 
-                    <!-- 3. Bild (Nur Handy) -->
                     <div class="md:hidden relative hero-img-container shadow-2xl">
                         <img src="https://z-cdn-media.chatglm.cn/files/2794fb2b-eda4-4d2d-bb18-b6c61e54917f.jpeg?auth_key=1884130651-7adf035c4ef44c46801c572eb3d8d299-0-d5951a34f50b599a31013210e3011e80" alt="Hüpfburg Krokodil mieten in Achim" class="hero-img w-full h-auto object-cover">
                     </div>
 
-                    <!-- 4. Beschreibungstext (Handy & PC) -->
                     <div class="text-center md:text-left">
                         <p class="text-gray-700 leading-relaxed text-left md:text-left">Sie haben hier die Möglichkeit, die Feier Ihres Kindes zu einem unvergesslichen Erlebnis zu machen. Aus Erfahrung kann ich Ihnen sagen, dass die Hüpfburg super bei den Kids ankommt. Das besondere Design, mit Hüpf- und Rutschbereich bietet eine spannende Abwechslung im Vergleich zu gewöhnlichen Hüpfburgen.</p>
                     </div>
 
-                    <!-- 5. Buttons (Handy & PC) -->
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <a href="#kalender" class="bg-sun-yellow hover:bg-sun-dark text-gray-800 font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 text-center">
                             Jetzt Verfügbarkeit prüfen
@@ -196,20 +152,16 @@
                     </div>
                 </div>
 
-                <!-- Rechte Spalte: Badge & Bild (Nur PC) -->
                 <div class="hidden md:flex flex-col gap-4">
-                    <!-- Badge (PC) -->
                     <div class="flex justify-start">
                         <span class="bg-sun-yellow text-gray-800 font-bold py-2 px-6 rounded-full shadow-md text-lg inline-flex items-center gap-2">
                             <span>🐊</span> Modell: Krokodil
                         </span>
                     </div>
-                    <!-- Bild (PC) -->
                     <div class="relative hero-img-container shadow-2xl">
                         <img src="https://z-cdn-media.chatglm.cn/files/2794fb2b-eda4-4d2d-bb18-b6c61e54917f.jpeg?auth_key=1884130651-7adf035c4ef44c46801c572eb3d8d299-0-d5951a34f50b599a31013210e3011e80" alt="Hüpfburg Krokodil mieten in Achim" class="hero-img w-full h-auto object-cover">
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -264,34 +216,13 @@
             <h2 class="text-3xl md:text-4xl font-bold text-crocodile-dark text-center mb-12">Technische Daten & Kennzahlen</h2>
             <div class="max-w-2xl mx-auto bg-gray-50 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100">
                 <ul class="space-y-4 text-md md:text-lg">
-                    <li class="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <span class="font-semibold text-gray-600">Maße (Länge)</span>
-                        <span class="font-bold text-gray-800 text-right">5,7m ↔️</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <span class="font-semibold text-gray-600">Maße (Breite)</span>
-                        <span class="font-bold text-gray-800 text-right">4,4m ↕️</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <span class="font-semibold text-gray-600">Maße (Höhe)</span>
-                        <span class="font-bold text-gray-800 text-right">4m ⬆️</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <span class="font-semibold text-gray-600">Gewicht</span>
-                        <span class="font-bold text-gray-800 text-right">120kg</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <span class="font-semibold text-gray-600">Kinder Anzahl</span>
-                        <span class="font-bold text-gray-800 text-right">max. 8</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b border-gray-200 pb-3">
-                        <span class="font-semibold text-gray-600">Sicherheit</span>
-                        <span class="font-bold text-gray-800 text-right text-sm md:text-base">Zertifiziert nach DIN EN 14960</span>
-                    </li>
-                    <li class="flex justify-between items-center">
-                        <span class="font-semibold text-gray-600">Packmaß</span>
-                        <span class="font-bold text-gray-800 text-right">0,8m⌀ x 1,5m</span>
-                    </li>
+                    <li class="flex justify-between items-center border-b border-gray-200 pb-3"><span class="font-semibold text-gray-600">Maße (Länge)</span><span class="font-bold text-gray-800 text-right">5,7m ↔️</span></li>
+                    <li class="flex justify-between items-center border-b border-gray-200 pb-3"><span class="font-semibold text-gray-600">Maße (Breite)</span><span class="font-bold text-gray-800 text-right">4,4m ↕️</span></li>
+                    <li class="flex justify-between items-center border-b border-gray-200 pb-3"><span class="font-semibold text-gray-600">Maße (Höhe)</span><span class="font-bold text-gray-800 text-right">4m ⬆️</span></li>
+                    <li class="flex justify-between items-center border-b border-gray-200 pb-3"><span class="font-semibold text-gray-600">Gewicht</span><span class="font-bold text-gray-800 text-right">120kg</span></li>
+                    <li class="flex justify-between items-center border-b border-gray-200 pb-3"><span class="font-semibold text-gray-600">Kinder Anzahl</span><span class="font-bold text-gray-800 text-right">max. 8</span></li>
+                    <li class="flex justify-between items-center border-b border-gray-200 pb-3"><span class="font-semibold text-gray-600">Sicherheit</span><span class="font-bold text-gray-800 text-right text-sm md:text-base">Zertifiziert nach DIN EN 14960</span></li>
+                    <li class="flex justify-between items-center"><span class="font-semibold text-gray-600">Packmaß</span><span class="font-bold text-gray-800 text-right">0,8m⌀ x 1,5m</span></li>
                 </ul>
             </div>
         </div>
@@ -334,14 +265,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-crocodile-dark text-center mb-12">Hüpfburg in Aktion</h2>
             <div class="relative overflow-hidden w-full max-w-sm mx-auto bg-white p-2 md:p-4 rounded-2xl shadow-xl border-4 border-crocodile-green">
                 <div class="relative overflow-hidden w-full rounded-lg" style="padding-top: 177.78%;">
-                    <iframe 
-                        class="absolute top-0 left-0 bottom-0 right-0 w-full h-full" 
-                        src="https://www.youtube.com/embed/_vISJ6ezGkI?rel=0&modestbranding=1&playsinline=1" 
-                        title="Hüpfburg Krokodil in Aktion" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <iframe class="absolute top-0 left-0 bottom-0 right-0 w-full h-full" src="https://www.youtube.com/embed/_vISJ6ezGkI?rel=0&modestbranding=1&playsinline=1" title="Hüpfburg Krokodil in Aktion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -353,13 +277,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-crocodile-dark text-center mb-4">Verfügbarkeits-Kalender</h2>
             <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Schauen Sie hier, ob Ihr Wunschdatum noch frei ist. Bei Fragen kontaktieren Sie uns einfach direkt!</p>
             <div class="max-w-4xl mx-auto bg-white p-2 md:p-4 rounded-2xl shadow-xl overflow-hidden">
-                <iframe 
-                    src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&showTitle=0&src=ZXZlbnR2ZXJsZWloYWNoaW1AZ21haWwuY29t&src=NzRiNjVlZWM4ZTBjOWNjZmU5YTMzMmJjMmZhZGVlMzkxYzc3ZWRjY2RlM2U1OTBmMjYzZGUxMGIwNTk1NmYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23f4511e&color=%2333b679" 
-                    style="border: 0; width: 100%; height: 100%; min-height: 500px;"
-                    class="w-full h-[500px] md:h-[600px] rounded-lg" 
-                    frameborder="0" 
-                    scrolling="no">
-                </iframe>
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&showTitle=0&src=ZXZlbnR2ZXJsZWloYWNoaW1AZ21haWwuY29t&src=NzRiNjVlZWM4ZTBjOWNjZmU5YTMzMmJjMmZhZGVlMzkxYzc3ZWRjY2RlM2U1OTBmMjYzZGUxMGIwNTk1NmYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23f4511e&color=%2333b679" style="border: 0; width: 100%; height: 100%; min-height: 500px;" class="w-full h-[500px] md:h-[600px] rounded-lg" frameborder="0" scrolling="no"></iframe>
             </div>
         </div>
     </section>
@@ -389,21 +307,16 @@
 
             <div class="text-center mb-12">
                 <a href="https://www.instagram.com/hupfburgverleihachim/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition transform hover:scale-105 mt-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     @hupfburgverleihachim
                 </a>
             </div>
 
             <div class="grid md:grid-cols-2 gap-10">
-                <!-- Formular Container -->
                 <div id="form-container" class="bg-gray-50 p-8 rounded-2xl shadow-lg">
                     <h3 class="text-2xl font-bold mb-6 text-gray-800">Schreiben Sie uns</h3>
                     
-                    <!-- FormSubmit Formular -->
                     <form id="contact-form" action="https://formsubmit.co/eventverleihachim@gmail.com" method="POST" class="space-y-4">
-                        <!-- FormSubmit versteckte Einstellungen -->
                         <input type="hidden" name="_subject" value="Neue Anfrage über die Website!">
                         <input type="hidden" name="_template" value="table">
                         <input type="text" name="_honey" style="display:none">
@@ -414,7 +327,8 @@
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">E-Mail</label>
-                            <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-crocodile-green focus:ring-crocodile-green p-2 border">
+                            <!-- inputmode="email" statt type="email", damit Umlaute akzeptiert werden, aber Handy-Tastatur passt -->
+                            <input type="text" inputmode="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-crocodile-green focus:ring-crocodile-green p-2 border">
                         </div>
                         <div>
                             <label for="datum" class="block text-sm font-medium text-gray-700">Wunschdatum</label>
@@ -431,14 +345,7 @@
                 </div>
 
                 <div class="rounded-2xl overflow-hidden shadow-lg min-h-[400px]">
-                    <iframe 
-                        src="https://www.google.com/maps?q=Waldenburger+Str.+9a,+28832+Achim&output=embed" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; min-height: 400px;" 
-                        allowfullscreen="" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <iframe src="https://www.google.com/maps?q=Waldenburger+Str.+9a,+28832+Achim&output=embed" width="100%" height="100%" style="border:0; min-height: 400px;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -460,9 +367,7 @@
             
             <div class="mt-6">
                 <a href="https://www.instagram.com/hupfburgverleihachim/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gray-300 hover:text-white transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     Folge uns auf Instagram
                 </a>
             </div>
@@ -473,17 +378,15 @@
         </div>
     </footer>
 
-    <!-- Lightbox Modal für vergrößerte Bilder -->
+    <!-- Lightbox Modal -->
     <div id="lightbox" onclick="closeLightbox()">
         <img id="lightbox-img" src="" alt="Vergrößertes Bild der Hüpfburg">
     </div>
 
-    <!-- JavaScript für Jahr, Lightbox und AJAX Formular -->
+    <!-- JavaScript -->
     <script>
-        // Automatisches Jahr im Footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Lightbox Funktionalität
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
@@ -498,18 +401,16 @@
             lightbox.classList.remove('active');
         }
 
-        // AJAX Formular-Übermittlung via FormSubmit
         const form = document.getElementById('contact-form');
         const formContainer = document.getElementById('form-container');
 
         form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Verhindert das normale Weiterleiten
+            e.preventDefault();
 
             const formData = new FormData(form);
             const object = Object.fromEntries(formData);
             const json = JSON.stringify(object);
 
-            // Sende die Daten im Hintergrund an FormSubmit (AJAX Endpunkt)
             fetch('https://formsubmit.co/ajax/eventverleihachim@gmail.com', {
                 method: 'POST',
                 headers: {
@@ -520,7 +421,6 @@
             })
             .then(response => response.json())
             .then(data => {
-                // Bei Erfolg: Formular durch Erfolgsnachricht ersetzen
                 formContainer.innerHTML = `
                     <div class="text-center py-10">
                         <div class="text-5xl mb-4">✅</div>
@@ -530,7 +430,6 @@
                 `;
             })
             .catch(error => {
-                // Bei Fehler: Fehlermeldung anzeigen
                 formContainer.innerHTML = `
                     <div class="text-center py-10">
                         <div class="text-5xl mb-4">⚠️</div>
