@@ -107,7 +107,7 @@
         .hero-img-container:hover .hero-img { transform: scale(1.08) rotate(-1.5deg); }
         #lightbox { display: none; position: fixed; z-index: 999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; cursor: pointer; }
         #lightbox.active { display: flex; }
-        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 0.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        #lightbox img { max-width: 90%; max-height: 90%; width: auto; height: auto; object-fit: contain; border-radius: 0.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -419,7 +419,7 @@
 
     <!-- Lightbox Modal -->
     <div id="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Vergrößertes Bild der Hüpfburg" width="1000" height="1000">
+        <img id="lightbox-img" src="" alt="Vergrößertes Bild der Hüpfburg">
     </div>
 
     <!-- JavaScript -->
