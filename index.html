@@ -291,16 +291,12 @@
             <h2 class="text-3xl md:text-4xl font-bold text-crocodile-dark text-center mb-4">Verfügbarkeits-Kalender</h2>
             <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Schauen Sie hier, ob Ihr Wunschdatum noch frei ist. Bei Fragen kontaktieren Sie uns einfach direkt!</p>
             <div class="max-w-4xl mx-auto bg-white p-2 md:p-4 rounded-2xl shadow-xl overflow-hidden">
-                <!-- loading="lazy" entfernt und scrolling="auto" hinzugefügt für bessere iPhone Kompatibilität -->
-                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBerlin&showPrint=0&showTitle=0&src=ZXZlbnR2ZXJsZWloYWNoaW1AZ21haWwuY29t&src=NzRiNjVlZWM4ZTBjOWNjZmU5YTMzMmJjMmZhZGVlMzkxYzc3ZWRjY2RlM2U1OTBmMjYzZGUxMGIwNTk1NmYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23f4511e&color=%2333b679" style="border: 0; width: 100%; height: 100%; min-height: 500px;" class="w-full h-[500px] md:h-[600px] rounded-lg" frameborder="0" scrolling="auto"></iframe>
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBerlin&showPrint=0&showTitle=0&src=ZXZlbnR2ZXJsZWloYWNoaW1AZ21haWwuY29t&src=NzRiNjVlZWM4ZTBjOWNjZmU5YTMzMmJjMmZhZGVlMzkxYzc3ZWRjY2RlM2U1OTBmMjYzZGUxMGIwNTk1NmYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23f4511e&color=%2333b679" style="border: 0; width: 100%; height: 100%; min-height: 500px;" class="w-full h-[500px] md:h-[600px] rounded-lg" frameborder="0" scrolling="no" loading="eager"></iframe>
             </div>
-            <!-- Fallback Button falls der Kalender auf dem Handy mal hängt -->
-            <div class="text-center mt-6">
-                <a href="https://calendar.google.com/calendar/embed?src=ZXZlbnR2ZXJsZWloYWNoaW1AZ21haWwuY29t&src=NzRiNjVlZWM4ZTBjOWNjZmU5YTMzMmJjMmZhZGVlMzkxYzc3ZWRjY2RlM2U1OTBmMjYzZGUxMGIwNTk1NmYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&ctz=Europe%2FBerlin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-full shadow-lg transition transform hover:-translate-y-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                    Kalender in neuem Tab öffnen
-                </a>
-            </div>
+            <p class="text-center text-sm text-gray-500 mt-4">
+                Kalender wird nicht angezeigt?
+                <a href="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBerlin&showPrint=0&showTitle=0&src=ZXZlbnR2ZXJsZWloYWNoaW1AZ21haWwuY29t&src=NzRiNjVlZWM4ZTBjOWNjZmU5YTMzMmJjMmZhZGVlMzkxYzc3ZWRjY2RlM2U1OTBmMjYzZGUxMGIwNTk1NmYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23f4511e&color=%2333b679" target="_blank" rel="noopener noreferrer" class="text-crocodile-dark font-semibold underline hover:text-crocodile-green">Hier direkt öffnen</a>
+            </p>
         </div>
     </section>
 
