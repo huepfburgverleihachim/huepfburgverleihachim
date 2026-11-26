@@ -38,7 +38,7 @@
     <!-- Theme-Farbe für Mobilbrowser -->
     <meta name="theme-color" content="#2E7D32">
 
-    <!-- Valide strukturierte Daten (Schema.org LocalBusiness + Angebote + FAQPage) -->
+    <!-- Valide strukturierte Daten (Schema.org LocalBusiness + VideoObject + FAQPage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -105,6 +105,15 @@
               "availability": "https://schema.org/InStock"
             }
           ]
+        },
+        {
+          "@type": "VideoObject",
+          "name": "Hüpfburg Modell Krokodil mit Rutsche in Aktion",
+          "description": "Kurzes Video unserer zertifizierten Profi-Hüpfburg Modell Krokodil mit Rutsche beim Einsatz auf einer Feier.",
+          "thumbnailUrl": "https://huepfburg-abholen.de/hero.webp",
+          "uploadDate": "2026-11-26T12:00:00+01:00",
+          "duration": "PT15S",
+          "contentUrl": "https://huepfburg-abholen.de/video1.mp4"
         },
         {
           "@type": "FAQPage",
@@ -182,7 +191,7 @@
             -webkit-font-smoothing: antialiased;
         }
         h1, h2, h3, .font-heading { font-family: var(--font-heading); line-height: 1.25; }
-        img, svg, iframe { display: block; max-width: 100%; }
+        img, svg, iframe, video { display: block; max-width: 100%; }
         a { color: inherit; text-decoration: none; }
         button, input, textarea { font-family: inherit; font-size: 100%; }
         section[id] { scroll-margin-top: 4.5rem; }
@@ -299,10 +308,10 @@
         .gallery-img { border-radius: 1rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1); height: 16rem; width: 100%; object-fit: cover; cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
         .gallery-img:hover { opacity: 0.88; transform: translateY(-2px); }
 
-        /* Video, Kalender & Google Maps (Direkt-Einbindung) */
+        /* Lokales 1:1 Video, Kalender & Google Maps */
         .video-frame-outer { background: #ffffff; padding: 0.75rem; border-radius: 1rem; box-shadow: 0 12px 25px rgba(0,0,0,0.1); border: 4px solid var(--crocodile-green); }
-        .aspect-9-16 { position: relative; width: 100%; padding-top: 177.78%; border-radius: 0.5rem; overflow: hidden; background: var(--gray-100); }
-        .aspect-9-16 iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .aspect-square { position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 0.5rem; overflow: hidden; background: #000000; }
+        .aspect-square video { width: 100%; height: 100%; object-fit: cover; }
         .calendar-card { background: #ffffff; padding: 0.75rem; border-radius: 1rem; box-shadow: 0 12px 25px rgba(0,0,0,0.08); overflow: hidden; }
         .calendar-slot { width: 100%; border-radius: 0.5rem; overflow: hidden; background: var(--gray-100); }
         .calendar-slot iframe { width: 100%; height: 500px; border: 0; }
@@ -543,19 +552,22 @@
             </div>
         </section>
 
-        <!-- 7. Video (Direkteinbindung via YouTube im erweiterten Datenschutzmodus) -->
+        <!-- 7. Video (Eigenes 1:1 MP4-Video direkt von GitHub Pages ohne YouTube) -->
         <section id="video" class="py-section bg-gray">
             <div class="container">
                 <h2 class="section-title">Unsere Hüpfburg in Aktion</h2>
-                <div class="max-w-sm video-frame-outer">
-                    <div class="aspect-9-16">
-                        <iframe src="https://www.youtube-nocookie.com/embed/_vISJ6ezGkI?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Hüpfburg Krokodil in Aktion" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                <div class="max-w-md video-frame-outer">
+                    <div class="aspect-square">
+                        <video controls playsinline preload="metadata" width="1080" height="1080" aria-label="Video der Hüpfburg Krokodil in Aktion">
+                            <source src="video1.mp4#t=0.1" type="video/mp4">
+                            Ihr Browser unterstützt die direkte Videowiedergabe leider nicht.
+                        </video>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 8. Verfügbarkeits-Kalender (Direkteinbindung mit Lazy Loading) -->
+        <!-- 8. Verfügbarkeits-Kalender -->
         <section id="kalender" class="py-section bg-gray border-top-subtle">
             <div class="container">
                 <h2 class="section-title" style="margin-bottom: 0.75rem;">Verfügbarkeits-Kalender prüfen</h2>
@@ -638,7 +650,7 @@
                         </form>
                     </div>
 
-                    <!-- Google Maps Standort (Direkteinbindung) -->
+                    <!-- Google Maps Standort -->
                     <div class="map-slot">
                         <iframe src="https://maps.google.com/maps?q=H%C3%BCpfburg+Verleih+Achim,+Waldenburger+Str.+9a,+28832+Achim&amp;output=embed" title="Standortkarte Hüpfburg Verleih Achim" allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"></iframe>
                     </div>
@@ -734,7 +746,7 @@
         <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Vergrößertes Bild der Hüpfburg">
     </div>
 
-    <!-- Datenschutzerklärung Modal (angepasst auf GitHub Pages, INWX & direkte Google-Einbindungen) -->
+    <!-- Datenschutzerklärung Modal (angepasst auf GitHub Pages, INWX, eigenes Video & Google-Einbindungen) -->
     <div id="privacy-modal" class="modal-backdrop" onclick="if(event.target === this) closePrivacyModal()" role="dialog" aria-modal="true" aria-labelledby="privacy-heading">
         <div class="privacy-dialog">
             <h2 id="privacy-heading">Datenschutzerklärung</h2>
@@ -745,21 +757,20 @@
             Telefon: +49 178 4156163 | E-Mail: eventverleihachim@gmail.com</p>
 
             <h3>2. Hosting über GitHub Pages &amp; Domainbereitstellung (INWX)</h3>
-            <p>Diese Website wird als statische Webseite über den Dienst <strong>GitHub Pages</strong> gehostet. Anbieter ist die GitHub Inc., 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA (für Nutzer im Europäischen Wirtschaftsraum zuständig: GitHub B.V., Prins Bernhardplein 200, 1097 JB Amsterdam, Niederlande). Beim Aufruf unserer Seiten erfasst GitHub technisch notwendige Verbindungsdaten (insbesondere Ihre IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene URL sowie Browser- und Betriebssysteminformationen) in Server-Logfiles, um die Website sicher auszuliefern und vor Missbrauch oder Angriffen zu schützen.</p>
+            <p>Diese Website (einschließlich der direkt eingebundenen Bilder und des Produktvideos) wird als statische Webseite über den Dienst <strong>GitHub Pages</strong> gehostet. Anbieter ist die GitHub Inc., 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA (für Nutzer im Europäischen Wirtschaftsraum zuständig: GitHub B.V., Prins Bernhardplein 200, 1097 JB Amsterdam, Niederlande). Beim Aufruf unserer Seiten erfasst GitHub technisch notwendige Verbindungsdaten (insbesondere Ihre IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene URL sowie Browser- und Betriebssysteminformationen) in Server-Logfiles, um die Website sicher auszuliefern und vor Missbrauch oder Angriffen zu schützen.</p>
             <p>Rechtsgrundlage ist unser berechtigtes Interesse an einer schnellen, zuverlässigen und sicheren Bereitstellung unseres Online-Angebots gemäß Art. 6 Abs. 1 lit. f DSGVO. Soweit Daten an Server der GitHub Inc. in den USA übermittelt werden, stützt sich dies auf die Zertifizierung von GitHub nach dem <strong>EU-U.S. Data Privacy Framework (DPF)</strong> sowie auf die Standardvertragsklauseln der EU-Kommission. Die Registrierung der Domain sowie die DNS-Namensauflösung erfolgen über die <strong>INWX GmbH &amp; Co. KG</strong>, Prinzessinnenstr. 30, 10969 Berlin.</p>
 
             <h3>3. Kontaktformular (FormSubmit), E-Mail, Telefon &amp; WhatsApp</h3>
             <p>Wenn Sie uns per Kontaktformular, E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung Ihrer Mietanfrage und für eventuelle Rückfragen (Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO zur Durchführung vorvertraglicher Maßnahmen sowie Art. 6 Abs. 1 lit. a DSGVO auf Basis Ihrer Einwilligung im Formular).</p>
             <p>Für die technische Übermittlung des Kontaktformulars auf unserer statischen Website nutzen wir den Dienst <strong>FormSubmit</strong> (formsubmit.co / Devro LABS). Ihre eingegebenen Formulardaten werden verschlüsselt über die Server von FormSubmit direkt an unsere E-Mail-Adresse weitergeleitet. Wenn Sie freiwillig den WhatsApp-Button nutzen, gelten ergänzend die Datenschutzbestimmungen der WhatsApp Ireland Limited.</p>
 
-            <h3>4. Eingebundene Dienste: YouTube, Google Kalender &amp; Google Maps</h3>
-            <p>Zur anschaulichen Darstellung unserer Hüpfburg, zur Anzeige freier Buchungstermine und zur leichten Anfahrtsplanung binden wir auf dieser Website Inhalte der <strong>Google Ireland Limited</strong> (Gordon House, Barrow Street, Dublin 4, Irland; Muttergesellschaft: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) direkt ein:</p>
+            <h3>4. Eingebundene Dienste: Google Kalender &amp; Google Maps</h3>
+            <p>Zur Anzeige freier Buchungstermine und zur leichten Anfahrtsplanung binden wir auf dieser Website Inhalte der <strong>Google Ireland Limited</strong> (Gordon House, Barrow Street, Dublin 4, Irland; Muttergesellschaft: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) direkt ein:</p>
             <ul>
-                <li><strong>YouTube-Video:</strong> Eingebunden im erweiterten Datenschutzmodus (<code>youtube-nocookie.com</code>), um unsere Hüpfburg im Einsatz zu zeigen.</li>
                 <li><strong>Google Kalender:</strong> Eingebunden zur tagesaktuellen Darstellung freier und belegter Miettermine.</li>
                 <li><strong>Google Maps:</strong> Eingebunden zur interaktiven Anzeige unseres Abholstandorts in Achim.</li>
             </ul>
-            <p>Sobald diese eingebetteten Rahmen (Iframes) in Ihrem Browser geladen werden, stellt Ihr Browser eine direkte Verbindung zu den Servern von Google her. Dabei werden Ihre IP-Adresse sowie technische Browserdaten an Google übertragen; zudem kann Google Cookies oder lokale Speicherelemente einsetzen. Eine eventuelle Datenübermittlung in die USA ist über die Zertifizierung der Google LLC unter dem <strong>EU-U.S. Data Privacy Framework</strong> abgesichert. Die Einbindung erfolgt im Interesse einer kundenfreundlichen Darstellung unseres Angebots und unserer Verfügbarkeiten (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen finden Sie in der Datenschutzerklärung von Google unter <code>https://policies.google.com/privacy</code>.</p>
+            <p>Sobald diese eingebetteten Rahmen (Iframes) in Ihrem Browser geladen werden, stellt Ihr Browser eine direkte Verbindung zu den Servern von Google her. Dabei werden Ihre IP-Adresse sowie technische Browserdaten an Google übertragen; zudem kann Google Cookies oder lokale Speicherelemente einsetzen. Eine eventuelle Datenübermittlung in die USA ist über die Zertifizierung der Google LLC unter dem <strong>EU-U.S. Data Privacy Framework</strong> abgesichert. Die Einbindung erfolgt im Interesse einer kundenfreundlichen Darstellung unserer Verfügbarkeiten und unseres Standorts (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen finden Sie in der Datenschutzerklärung von Google unter <code>https://policies.google.com/privacy</code>.</p>
 
             <h3>5. Ihre Datenschutzrechte</h3>
             <ul>
