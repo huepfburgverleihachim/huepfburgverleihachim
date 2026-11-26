@@ -56,7 +56,7 @@
             "https://huepfburg-abholen.de/bild2.webp",
             "https://huepfburg-abholen.de/bild3.webp"
           ],
-          "telephone": "+491784156163",
+          "telephone": "+49 178 4156163",
           "email": "eventverleihachim@gmail.com",
           "priceRange": "ab 99 €",
           "address": {
@@ -147,13 +147,8 @@
     }
     </script>
 
-    <!-- Schlankes, direkt eingebettetes CSS (ersetzt Tailwind-CDN & externe Google Fonts für maximale Ladezeit & DSGVO-Sicherheit) -->
+    <!-- Schlankes, direkt eingebettetes CSS (ersetzt das langsame Tailwind-CDN & externe Google Fonts) -->
     <style>
-        /* Optional: Lokale Schriften einbinden, falls du .woff2-Dateien im Ordner /fonts/ ablegst:
-        @font-face { font-family: 'Fredoka'; src: url('fonts/fredoka-v14-latin-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-        @font-face { font-family: 'Poppins'; src: url('fonts/poppins-v21-latin-regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-        */
-
         :root {
             --crocodile-green: #4CAF50;
             --crocodile-dark: #2E7D32;
@@ -204,6 +199,7 @@
         .bg-white { background-color: #ffffff; }
         .bg-gray { background-color: var(--gray-50); }
         .bg-dark-green { background-color: var(--crocodile-dark); color: #ffffff; }
+        .border-top-subtle { border-top: 1px solid var(--gray-200); }
         .text-center { text-align: center; }
 
         /* Header / Navigation */
@@ -303,35 +299,30 @@
         .gallery-img { border-radius: 1rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1); height: 16rem; width: 100%; object-fit: cover; cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
         .gallery-img:hover { opacity: 0.88; transform: translateY(-2px); }
 
-        /* Video, Kalender & 2-Klick-Datenschutz-Boxen */
+        /* Video, Kalender & Google Maps (Direkt-Einbindung) */
         .video-frame-outer { background: #ffffff; padding: 0.75rem; border-radius: 1rem; box-shadow: 0 12px 25px rgba(0,0,0,0.1); border: 4px solid var(--crocodile-green); }
         .aspect-9-16 { position: relative; width: 100%; padding-top: 177.78%; border-radius: 0.5rem; overflow: hidden; background: var(--gray-100); }
-        .aspect-9-16 iframe, .aspect-9-16 .consent-placeholder { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .aspect-9-16 iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
         .calendar-card { background: #ffffff; padding: 0.75rem; border-radius: 1rem; box-shadow: 0 12px 25px rgba(0,0,0,0.08); overflow: hidden; }
-        .calendar-slot { width: 100%; min-height: 500px; border-radius: 0.5rem; overflow: hidden; position: relative; background: var(--gray-100); }
-        .calendar-slot iframe { width: 100%; height: 550px; border: 0; }
-        .map-slot { border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.08); min-height: 420px; position: relative; background: var(--gray-100); display: flex; }
-        .map-slot iframe { width: 100%; height: 100%; min-height: 420px; border: 0; }
+        .calendar-slot { width: 100%; border-radius: 0.5rem; overflow: hidden; background: var(--gray-100); }
+        .calendar-slot iframe { width: 100%; height: 500px; border: 0; }
+        .map-slot { border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.08); min-height: 420px; background: var(--gray-100); display: flex; flex-direction: column; }
+        .map-slot iframe { flex: 1; width: 100%; min-height: 420px; border: 0; }
 
-        .consent-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1.75rem;
-            background: linear-gradient(145deg, var(--green-50), #ffffff);
-            border: 2px dashed var(--crocodile-green);
-            border-radius: 0.75rem;
-            width: 100%;
-            min-height: inherit;
-        }
-        .consent-icon { font-size: 2.75rem; margin-bottom: 0.75rem; }
-        .consent-title { font-weight: 700; font-size: 1.15rem; color: var(--crocodile-dark); margin-bottom: 0.5rem; }
-        .consent-text { font-size: 0.875rem; color: var(--gray-600); max-width: 24rem; margin-bottom: 1.25rem; }
-        .consent-sublink { margin-top: 0.75rem; font-size: 0.82rem; color: var(--crocodile-dark); text-decoration: underline; }
+        /* Kontakt & Formular */
+        .phone-big { font-size: 1.75rem; font-weight: 800; color: var(--crocodile-dark); display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-heading); transition: color 0.2s; }
+        .phone-big:hover { color: var(--crocodile-green); }
+        .contact-cta-row { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+        .form-card { background: var(--gray-50); padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .form-group { margin-bottom: 1rem; }
+        .form-label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.35rem; }
+        .form-input { width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-300); padding: 0.65rem 0.85rem; background: #ffffff; transition: border-color 0.2s, box-shadow 0.2s; }
+        .form-input:focus { outline: none; border-color: var(--crocodile-green); box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); }
+        .checkbox-row { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: var(--gray-600); margin: 1rem 0 1.25rem; }
+        .checkbox-row input { margin-top: 0.25rem; accent-color: var(--crocodile-dark); cursor: pointer; }
+        .link-underline { text-decoration: underline; color: var(--crocodile-dark); background: none; border: none; padding: 0; cursor: pointer; font-weight: 600; }
 
-        /* FAQ Akkordeon */
+        /* FAQ Akkordeon (ganz unten unter Kontakt & Google Maps) */
         .faq-list { display: flex; flex-direction: column; gap: 1rem; }
         .faq-item { background: #ffffff; border: 1px solid var(--gray-200); border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden; }
         .faq-item summary {
@@ -350,20 +341,7 @@
         .faq-item summary::-webkit-details-marker { display: none; }
         .faq-item summary::after { content: "+"; font-size: 1.5rem; color: var(--crocodile-green); font-weight: 700; line-height: 1; flex-shrink: 0; }
         .faq-item[open] summary::after { content: "−"; color: var(--crocodile-dark); }
-        .faq-answer { padding: 0 1.5rem 1.25rem; color: var(--gray-600); font-size: 0.95rem; border-top: 1px solid var(--gray-100); padding-top: 0.85rem; }
-
-        /* Kontakt & Formular */
-        .phone-big { font-size: 1.75rem; font-weight: 800; color: var(--crocodile-dark); display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-heading); transition: color 0.2s; }
-        .phone-big:hover { color: var(--crocodile-green); }
-        .contact-cta-row { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
-        .form-card { background: var(--gray-50); padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
-        .form-group { margin-bottom: 1rem; }
-        .form-label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.35rem; }
-        .form-input { width: 100%; border-radius: 0.5rem; border: 1px solid var(--gray-300); padding: 0.65rem 0.85rem; background: #ffffff; transition: border-color 0.2s, box-shadow 0.2s; }
-        .form-input:focus { outline: none; border-color: var(--crocodile-green); box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); }
-        .checkbox-row { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: var(--gray-600); margin: 1rem 0 1.25rem; }
-        .checkbox-row input { margin-top: 0.25rem; accent-color: var(--crocodile-dark); cursor: pointer; }
-        .link-underline { text-decoration: underline; color: var(--crocodile-dark); background: none; border: none; padding: 0; cursor: pointer; font-weight: 600; }
+        .faq-answer { padding: 0.85rem 1.5rem 1.25rem; color: var(--gray-600); font-size: 0.95rem; border-top: 1px solid var(--gray-100); }
 
         /* Footer */
         .site-footer { background-color: var(--gray-800); color: var(--gray-300); padding: 3rem 0 2.5rem; }
@@ -413,6 +391,7 @@
             .grid-2 { grid-template-columns: repeat(2, 1fr); align-items: center; }
             .grid-2-top { align-items: stretch; }
             .transport-img-card { margin: 0 0 0 auto; }
+            .calendar-slot iframe { height: 600px; }
             .phone-big { font-size: 2.25rem; }
             .footer-bottom { flex-direction: row; justify-content: center; gap: 1.5rem; }
         }
@@ -441,7 +420,7 @@
     </header>
 
     <main>
-        <!-- 1. Hero Sektion (Nur noch ein einzelnes LCP-Bild im DOM) -->
+        <!-- 1. Hero Sektion (Einzelnes LCP-Bild im DOM für Mobile & Desktop) -->
         <section id="hero" class="hero-section">
             <div class="container">
                 <div class="hero-grid">
@@ -564,82 +543,39 @@
             </div>
         </section>
 
-        <!-- 7. Video (mit DSGVO-konformer 2-Klick-Lösung) -->
+        <!-- 7. Video (Direkteinbindung via YouTube im erweiterten Datenschutzmodus) -->
         <section id="video" class="py-section bg-gray">
             <div class="container">
                 <h2 class="section-title">Unsere Hüpfburg in Aktion</h2>
                 <div class="max-w-sm video-frame-outer">
-                    <div class="aspect-9-16" id="youtube-container">
-                        <div class="consent-placeholder">
-                            <div class="consent-icon" aria-hidden="true">🎬</div>
-                            <p class="consent-title">YouTube-Video anzeigen</p>
-                            <p class="consent-text">Mit Klick auf den Button wird das Video über YouTube (erweiterter Datenschutzmodus) geladen. Dabei wird Ihre IP-Adresse an YouTube/Google übermittelt.</p>
-                            <button type="button" class="btn btn-green btn-sm" onclick="loadEmbed('youtube')">Video laden &amp; abspielen</button>
-                        </div>
+                    <div class="aspect-9-16">
+                        <iframe src="https://www.youtube-nocookie.com/embed/_vISJ6ezGkI?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Hüpfburg Krokodil in Aktion" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 8. Verfügbarkeits-Kalender (mit DSGVO-konformer 2-Klick-Lösung) -->
-        <section id="kalender" class="py-section bg-white">
+        <!-- 8. Verfügbarkeits-Kalender (Direkteinbindung mit Lazy Loading) -->
+        <section id="kalender" class="py-section bg-gray border-top-subtle">
             <div class="container">
                 <h2 class="section-title" style="margin-bottom: 0.75rem;">Verfügbarkeits-Kalender prüfen</h2>
-                <p class="text-center max-w-2xl" style="color: var(--gray-600); margin-bottom: 2.25rem;">Prüfen Sie direkt online, ob Ihr Wunschtermin noch frei ist, oder fragen Sie Ihren Termin unverbindlich per Telefon oder WhatsApp an.</p>
+                <p class="text-center max-w-2xl" style="color: var(--gray-600); margin-bottom: 2.25rem;">Schauen Sie direkt hier, ob Ihr Wunschtermin noch frei ist. Bei Fragen erreichen Sie uns jederzeit telefonisch oder per WhatsApp!</p>
                 <div class="max-w-4xl calendar-card">
-                    <div class="calendar-slot" id="calendar-container">
-                        <div class="consent-placeholder">
-                            <div class="consent-icon" aria-hidden="true">📅</div>
-                            <p class="consent-title">Belegungskalender laden</p>
-                            <p class="consent-text">Zum Anzeigen freier Termine wird Google Kalender eingebunden. Mit Ihrem Klick stimmen Sie der Übertragung Ihrer IP-Adresse an Google zu.</p>
-                            <button type="button" class="btn btn-yellow" onclick="loadEmbed('calendar')">Kalender jetzt anzeigen</button>
-                        </div>
+                    <div class="calendar-slot">
+                        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;ctz=Europe%2FBerlin&amp;showPrint=0&amp;showTitle=0&amp;src=ZXZlbnR2ZXJsZWloYWNoaW1AZ21haWwuY29t&amp;src=NzRiNjVlZWM4ZTBjOWNjZmU5YTMzMmJjMmZhZGVlMzkxYzc3ZWRjY2RlM2U1OTBmMjYzZGUxMGIwNTk1NmYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23f4511e&amp;color=%2333b679" title="Verfügbarkeits-Kalender Hüpfburg Verleih Achim" scrolling="no" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 9. Häufig gestellte Fragen (SEO-FAQ) -->
-        <section id="faq" class="py-section bg-gray">
-            <div class="container max-w-3xl">
-                <h2 class="section-title">Häufige Fragen zum Hüpfburg-Verleih (FAQ)</h2>
-                <div class="faq-list">
-                    <details class="faq-item">
-                        <summary>Brauche ich einen speziellen Anhängerführerschein für die Abholung?</summary>
-                        <div class="faq-answer">
-                            Nein, ein normaler PKW-Führerschein (Klasse B) reicht für unseren kostenlosen Transportanhänger völlig aus. Sie benötigen lediglich ein Auto mit Anhängerkupplung. Alternativ passt die gerollte Hüpfburg (Packmaß: 0,8 m ⌀ × 1,5 m) auch in einen großen Kombi oder Kastenwagen.
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Wie lange dauert der Auf- und Abbau der Hüpfburg?</summary>
-                        <div class="faq-answer">
-                            Mit zwei Erwachsenen ist die Hüpfburg in etwa 10 Minuten einsatzbereit. Untergrundplane auslegen, Hüpfburg ausrollen, Gebläse anschließen und an eine normale 230V-Steckdose stecken – das Krokodil bläst sich in rund 2 bis 3 Minuten komplett auf.
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Was passiert, wenn es am gebuchten Tag regnet?</summary>
-                        <div class="faq-answer">
-                            Dank unserer kostenlosen Schlecht-Wetter-Garantie bleiben Sie flexibel: Sollte Regen angekündigt sein, können Sie Ihre Buchung noch bis einen Tag vor der geplanten Abholung kostenfrei stornieren.
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Wie viel Platz und welcher Untergrund werden benötigt?</summary>
-                        <div class="faq-answer">
-                            Die Hüpfburg hat eine Grundfläche von 5,7 m × 4,4 m und ist 4,0 m hoch. Inklusive Gebläse im hinteren Bereich und rundum freiem Sicherheitsabstand empfehlen wir eine ebene Stellfläche von ca. 7 m × 6 m – idealerweise auf einer Rasenfläche oder geschützt auf unserer mitgelieferten Untergrundplane.
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. Kontakt & Standort -->
+        <!-- 9. Kontakt & Google Maps Standort -->
         <section id="kontakt" class="py-section bg-white">
             <div class="container max-w-6xl">
                 <h2 class="section-title" style="margin-bottom: 1.75rem;">Kontakt, Anfrage &amp; Abholstandort in Achim</h2>
 
                 <div class="text-center" style="margin-bottom: 2.5rem;">
                     <a href="tel:+491784156163" class="phone-big">
-                        <span aria-hidden="true">📞</span> 0178 4156163
+                        <span aria-hidden="true">📞</span> +49 178 4156163
                     </a>
                     <p style="color: var(--gray-600); margin-top: 0.5rem; font-size: 1.1rem; font-weight: 500;">Ich freue mich auf Ihren Anruf oder Ihre Nachricht!</p>
 
@@ -677,7 +613,7 @@
                                 <input type="text" id="name" name="Name" required autocomplete="name" class="form-input">
                             </div>
                             <div class="form-group">
-                                <label for="email" class="form-label">E-Mail oder Telefonnummer</label>
+                                <label for="email" class="form-label">E-Mail</label>
                                 <input type="email" id="email" name="email" required autocomplete="email" placeholder="ihre-adresse@beispiel.de" class="form-input">
                             </div>
                             <div class="form-group">
@@ -702,16 +638,43 @@
                         </form>
                     </div>
 
-                    <!-- Google Maps Standort (mit 2-Klick-Lösung) -->
-                    <div class="map-slot" id="map-container">
-                        <div class="consent-placeholder">
-                            <div class="consent-icon" aria-hidden="true">📍</div>
-                            <p class="consent-title">Abholstandort Achim auf Karte zeigen</p>
-                            <p class="consent-text">Waldenburger Str. 9a, 28832 Achim.<br>Mit Klick auf den Button wird Google Maps geladen und Ihre IP-Adresse an Google übertragen.</p>
-                            <button type="button" class="btn btn-green btn-sm" onclick="loadEmbed('map')">Google Maps Karte laden</button>
-                            <a href="https://www.google.com/maps/search/?api=1&amp;query=H%C3%BCpfburg+Verleih+Achim,+Waldenburger+Str.+9a,+28832+Achim" target="_blank" rel="noopener noreferrer" class="consent-sublink">Oder Route direkt in Google Maps öffnen ↗</a>
-                        </div>
+                    <!-- Google Maps Standort (Direkteinbindung) -->
+                    <div class="map-slot">
+                        <iframe src="https://maps.google.com/maps?q=H%C3%BCpfburg+Verleih+Achim,+Waldenburger+Str.+9a,+28832+Achim&amp;output=embed" title="Standortkarte Hüpfburg Verleih Achim" allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"></iframe>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Häufig gestellte Fragen (FAQ ganz unten unter der Google Maps Box) -->
+        <section id="faq" class="py-section bg-gray border-top-subtle">
+            <div class="container max-w-3xl">
+                <h2 class="section-title">Häufige Fragen zum Hüpfburg-Verleih (FAQ)</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Brauche ich einen speziellen Anhängerführerschein für die Abholung?</summary>
+                        <div class="faq-answer">
+                            Nein, ein normaler PKW-Führerschein (Klasse B) reicht für unseren kostenlosen Transportanhänger völlig aus. Sie benötigen lediglich ein Auto mit Anhängerkupplung. Alternativ passt die gerollte Hüpfburg (Packmaß: 0,8 m ⌀ × 1,5 m) auch in einen großen Kombi oder Kastenwagen.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Wie lange dauert der Auf- und Abbau der Hüpfburg?</summary>
+                        <div class="faq-answer">
+                            Mit zwei Erwachsenen ist die Hüpfburg in etwa 10 Minuten einsatzbereit. Untergrundplane auslegen, Hüpfburg ausrollen, Gebläse anschließen und an eine normale 230V-Steckdose stecken – das Krokodil bläst sich in rund 2 bis 3 Minuten komplett auf.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Was passiert, wenn es am gebuchten Tag regnet?</summary>
+                        <div class="faq-answer">
+                            Dank unserer kostenlosen Schlecht-Wetter-Garantie bleiben Sie flexibel: Sollte Regen angekündigt sein, können Sie Ihre Buchung noch bis einen Tag vor der geplanten Abholung kostenfrei stornieren.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Wie viel Platz und welcher Untergrund werden benötigt?</summary>
+                        <div class="faq-answer">
+                            Die Hüpfburg hat eine Grundfläche von 5,7 m × 4,4 m und ist 4,0 m hoch. Inklusive Gebläse im hinteren Bereich und rundum freiem Sicherheitsabstand empfehlen wir eine ebene Stellfläche von ca. 7 m × 6 m – idealerweise auf einer Rasenfläche oder geschützt auf unserer mitgelieferten Untergrundplane.
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -742,7 +705,7 @@
                 </div>
 
                 <div style="padding-top: 0.6rem; border-top: 1px solid var(--gray-600);">
-                    <p><a href="tel:+491784156163">Telefon: 0178 4156163</a></p>
+                    <p><a href="tel:+491784156163">Telefon: +49 178 4156163</a></p>
                     <p><a href="mailto:eventverleihachim@gmail.com">E-Mail: eventverleihachim@gmail.com</a></p>
                 </div>
             </div>
@@ -765,13 +728,13 @@
         </div>
     </footer>
 
-    <!-- Lightbox Modal (ohne invalides leeres src-Attribut) -->
+    <!-- Lightbox Modal -->
     <div id="lightbox" class="modal-backdrop" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Bildvorschau">
         <button type="button" class="modal-close-floating" aria-label="Schließen">&times;</button>
         <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Vergrößertes Bild der Hüpfburg">
     </div>
 
-    <!-- Datenschutzerklärung Modal -->
+    <!-- Datenschutzerklärung Modal (angepasst auf GitHub Pages, INWX & direkte Google-Einbindungen) -->
     <div id="privacy-modal" class="modal-backdrop" onclick="if(event.target === this) closePrivacyModal()" role="dialog" aria-modal="true" aria-labelledby="privacy-heading">
         <div class="privacy-dialog">
             <h2 id="privacy-heading">Datenschutzerklärung</h2>
@@ -781,22 +744,29 @@
             <strong>Janes Meister</strong>, Hauptstraße 27, 49377 Vechta<br>
             Telefon: +49 178 4156163 | E-Mail: eventverleihachim@gmail.com</p>
 
-            <h3>2. Hosting und Server-Logfiles</h3>
-            <p>Beim Aufruf dieser Website erhebt unser Hosting-Provider automatisch technisch notwendige Zugriffsdaten (IP-Adresse, Datum/Uhrzeit des Abrufs, Browsertyp, Betriebssystem, Referrer-URL) in sogenannten Server-Logfiles. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren und störungsfreien Betrieb der Website).</p>
+            <h3>2. Hosting über GitHub Pages &amp; Domainbereitstellung (INWX)</h3>
+            <p>Diese Website wird als statische Webseite über den Dienst <strong>GitHub Pages</strong> gehostet. Anbieter ist die GitHub Inc., 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA (für Nutzer im Europäischen Wirtschaftsraum zuständig: GitHub B.V., Prins Bernhardplein 200, 1097 JB Amsterdam, Niederlande). Beim Aufruf unserer Seiten erfasst GitHub technisch notwendige Verbindungsdaten (insbesondere Ihre IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene URL sowie Browser- und Betriebssysteminformationen) in Server-Logfiles, um die Website sicher auszuliefern und vor Missbrauch oder Angriffen zu schützen.</p>
+            <p>Rechtsgrundlage ist unser berechtigtes Interesse an einer schnellen, zuverlässigen und sicheren Bereitstellung unseres Online-Angebots gemäß Art. 6 Abs. 1 lit. f DSGVO. Soweit Daten an Server der GitHub Inc. in den USA übermittelt werden, stützt sich dies auf die Zertifizierung von GitHub nach dem <strong>EU-U.S. Data Privacy Framework (DPF)</strong> sowie auf die Standardvertragsklauseln der EU-Kommission. Die Registrierung der Domain sowie die DNS-Namensauflösung erfolgen über die <strong>INWX GmbH &amp; Co. KG</strong>, Prinzessinnenstr. 30, 10969 Berlin.</p>
 
             <h3>3. Kontaktformular (FormSubmit), E-Mail, Telefon &amp; WhatsApp</h3>
-            <p>Wenn Sie uns per Kontaktformular, E-Mail oder Telefon kontaktieren, werden Ihre Angaben zwecks Bearbeitung der Mietanfrage und für den Fall von Anschlussfragen verarbeitet (Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO – vorvertragliche Maßnahmen sowie Art. 6 Abs. 1 lit. a DSGVO bei Einwilligung).</p>
-            <p>Für den technischen Versand des Kontaktformulars nutzen wir den Dienst <strong>FormSubmit</strong> (formsubmit.co / Devro LABS). Die von Ihnen eingegebenen Formulardaten werden verschlüsselt über die Server von FormSubmit an unsere E-Mail-Adresse weitergeleitet. Bei Kontaktaufnahme über unseren optionalen WhatsApp-Link gelten ergänzend die Datenschutzbestimmungen der WhatsApp Ireland Limited.</p>
+            <p>Wenn Sie uns per Kontaktformular, E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung Ihrer Mietanfrage und für eventuelle Rückfragen (Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO zur Durchführung vorvertraglicher Maßnahmen sowie Art. 6 Abs. 1 lit. a DSGVO auf Basis Ihrer Einwilligung im Formular).</p>
+            <p>Für die technische Übermittlung des Kontaktformulars auf unserer statischen Website nutzen wir den Dienst <strong>FormSubmit</strong> (formsubmit.co / Devro LABS). Ihre eingegebenen Formulardaten werden verschlüsselt über die Server von FormSubmit direkt an unsere E-Mail-Adresse weitergeleitet. Wenn Sie freiwillig den WhatsApp-Button nutzen, gelten ergänzend die Datenschutzbestimmungen der WhatsApp Ireland Limited.</p>
 
-            <h3>4. Externe Inhalte (2-Klick-Lösung für YouTube, Google Kalender &amp; Google Maps)</h3>
-            <p>Auf unserer Website sind Dienste der Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland) standardmäßig deaktiviert, sodass beim bloßen Seitenaufruf keine Daten an Google übertragen werden. Erst wenn Sie aktiv auf „Video laden“, „Kalender jetzt anzeigen“ oder „Google Maps Karte laden“ klicken, erteilen Sie Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), dass der jeweilige Inhalt geladen und Ihre IP-Adresse an Google übermittelt wird (ggf. auch an Server der Google LLC in den USA auf Basis des EU-U.S. Data Privacy Frameworks).</p>
+            <h3>4. Eingebundene Dienste: YouTube, Google Kalender &amp; Google Maps</h3>
+            <p>Zur anschaulichen Darstellung unserer Hüpfburg, zur Anzeige freier Buchungstermine und zur leichten Anfahrtsplanung binden wir auf dieser Website Inhalte der <strong>Google Ireland Limited</strong> (Gordon House, Barrow Street, Dublin 4, Irland; Muttergesellschaft: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) direkt ein:</p>
+            <ul>
+                <li><strong>YouTube-Video:</strong> Eingebunden im erweiterten Datenschutzmodus (<code>youtube-nocookie.com</code>), um unsere Hüpfburg im Einsatz zu zeigen.</li>
+                <li><strong>Google Kalender:</strong> Eingebunden zur tagesaktuellen Darstellung freier und belegter Miettermine.</li>
+                <li><strong>Google Maps:</strong> Eingebunden zur interaktiven Anzeige unseres Abholstandorts in Achim.</li>
+            </ul>
+            <p>Sobald diese eingebetteten Rahmen (Iframes) in Ihrem Browser geladen werden, stellt Ihr Browser eine direkte Verbindung zu den Servern von Google her. Dabei werden Ihre IP-Adresse sowie technische Browserdaten an Google übertragen; zudem kann Google Cookies oder lokale Speicherelemente einsetzen. Eine eventuelle Datenübermittlung in die USA ist über die Zertifizierung der Google LLC unter dem <strong>EU-U.S. Data Privacy Framework</strong> abgesichert. Die Einbindung erfolgt im Interesse einer kundenfreundlichen Darstellung unseres Angebots und unserer Verfügbarkeiten (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen finden Sie in der Datenschutzerklärung von Google unter <code>https://policies.google.com/privacy</code>.</p>
 
-            <h3>5. Ihre Rechte</h3>
+            <h3>5. Ihre Datenschutzrechte</h3>
             <ul>
                 <li>Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung (Art. 15–18 DSGVO)</li>
-                <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO) und Widerspruch (Art. 21 DSGVO)</li>
+                <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO) und Widerspruch gegen Verarbeitungen nach Art. 6 Abs. 1 lit. f DSGVO (Art. 21 DSGVO)</li>
                 <li>Widerruf erteilter Einwilligungen jederzeit mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
-                <li>Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde (Art. 77 DSGVO), z. B. der Landesbeauftragten für den Datenschutz Niedersachsen</li>
+                <li>Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde (Art. 77 DSGVO), z. B. bei der Landesbeauftragten für den Datenschutz Niedersachsen</li>
             </ul>
 
             <div style="margin-top: 1.5rem; text-align: right;">
@@ -853,20 +823,6 @@
             }
         });
 
-        // DSGVO 2-Klick-Nachladen externer Iframes
-        function loadEmbed(type) {
-            if (type === 'youtube') {
-                document.getElementById('youtube-container').innerHTML =
-                    '<iframe src="https://www.youtube-nocookie.com/embed/_vISJ6ezGkI?rel=0&modestbranding=1&playsinline=1&autoplay=1" title="Video: Hüpfburg Krokodil in Aktion" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-            } else if (type === 'calendar') {
-                document.getElementById('calendar-container').innerHTML =
-                    '<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FBerlin&showPrint=0&showTitle=0&src=ZXZlbnR2ZXJsZWloYWNoaW1AZ21haWwuY29t&src=NzRiNjVlZWM4ZTBjOWNjZmU5YTMzMmJjMmZhZGVlMzkxYzc3ZWRjY2RlM2U1OTBmMjYzZGUxMGIwNTk1NmYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23f4511e&color=%2333b679" title="Verfügbarkeits-Kalender Hüpfburg Verleih Achim" loading="lazy"></iframe>';
-            } else if (type === 'map') {
-                document.getElementById('map-container').innerHTML =
-                    '<iframe src="https://maps.google.com/maps?q=H%C3%BCpfburg+Verleih+Achim,+Waldenburger+Str.+9a,+28832+Achim&output=embed" title="Standortkarte Hüpfburg Verleih Achim" allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"></iframe>';
-            }
-        }
-
         // Abgesicherter Formularversand via FormSubmit
         const form = document.getElementById('contact-form');
         const formContainer = document.getElementById('form-container');
@@ -909,7 +865,7 @@
                     <div class="text-center" style="padding: 2.5rem 1rem;">
                         <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
                         <h3 style="font-size: 1.5rem; color: #dc2626; margin-bottom: 0.75rem;">Senden fehlgeschlagen</h3>
-                        <p style="color: var(--gray-600);">Bitte rufen Sie kurz unter <a href="tel:+491784156163" class="link-underline">0178 4156163</a> an oder schreiben Sie uns direkt per WhatsApp.</p>
+                        <p style="color: var(--gray-600);">Bitte rufen Sie kurz unter <a href="tel:+491784156163" class="link-underline">+49 178 4156163</a> an oder schreiben Sie uns direkt per WhatsApp.</p>
                     </div>
                 `;
             });
